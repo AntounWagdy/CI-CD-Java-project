@@ -6,6 +6,6 @@ echo "*********************"
 echo "*** Deploying App ***"
 echo "*********************"
 
-scp -i -oStrictHostKeyChecking=no /opt/aws-key /tmp/.auth ec2-user@ec2-3-133-11-6.us-east-2.compute.amazonaws.com:/tmp/.auth
+scp -oStrictHostKeyChecking=no -i /opt/aws-key /tmp/.auth ec2-user@ec2-3-133-11-6.us-east-2.compute.amazonaws.com:/tmp/.auth
 scp -r -oStrictHostKeyChecking=no -i /opt/aws-key ./jenkins/deploy/publish ec2-user@ec2-3-133-11-6.us-east-2.compute.amazonaws.com:~/maven/
-ssh -i -oStrictHostKeyChecking=no /opt/aws-key ec2-user@ec2-3-133-11-6.us-east-2.compute.amazonaws.com "~/maven/deploy.sh"
+ssh -oStrictHostKeyChecking=no -i /opt/aws-key ec2-user@ec2-3-133-11-6.us-east-2.compute.amazonaws.com "~/maven/deploy.sh"
